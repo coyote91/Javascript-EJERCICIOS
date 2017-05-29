@@ -13,7 +13,11 @@ Explicación, ejercicios o enseñanza de las funciones de javascript DOM o nativ
 
 #scrollTop
 
-- añado tres ejercicios que explican el metodo scrollTop entre estos un modelo de barra y un boton que aparece y luego al dar click me desplaza hacia la parte superior de la pagina web.
+- añado tres ejercicios que explican el metodo scrollTop. 
+- explicacion metodo scrollTop
+- barra con un solo estilo
+- barra con dos estilos diferentes.
+- un boton que aparece y luego al dar click me desplaza hacia la parte superior de la pagina web.
 
 
 
