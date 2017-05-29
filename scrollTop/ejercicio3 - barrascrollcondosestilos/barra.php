@@ -35,6 +35,9 @@ function navbar_reset_top() {
 </head>
 <body  onload="javascript: window_onload();">
 
+<!---  pagina web oficial de la barra --->
+
+<!--- http://www.crypto-chat.com/# -->
 
 <div id="navbar" class="navbar_absolute">
    <div class="flechaizquierda">
