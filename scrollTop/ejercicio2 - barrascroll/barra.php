@@ -3,12 +3,12 @@
 <head>
 	<meta charset="UTF-8">
 	<title></title>
-	
+
 	 <link rel="stylesheet" href="barra.css" />
 
 	 <script type="text/javascript">
 
-
+//window.onload = window_onload;
 
 function window_onload() {
   window.addEventListener("scroll",navbar_reset_top,false);
@@ -27,26 +27,26 @@ function navbar_reset_top() {
 }
 
 </script>
-	
-	
-	
+
+
+
 </head>
 <body  onload="javascript: window_onload();">
-	
-	
+
+
 <div id="navbar" class="navbar_absolute">
    <div class="flechaizquierda">
-   
+
    </div>
-   
-   
+
+
     <div class="flechaderecha"></div>
-   
+
 </div>
 <div class="content">Content
 
  <div class="icono">
- 
+
  </div>
 
 
