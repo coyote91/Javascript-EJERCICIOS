@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+     <h1>este es el perfil</h1>
+
+<script>
+/*
+Este código JavaScript utiliza la clase `URLSearchParams` para obtener el valor del parámetro `sk` en la URL 
+y luego utiliza una serie de condicionales para mostrar un mensaje diferente dependiendo del valor de `sk`.
+
+En resumen, este código JavaScript genera una sección HTML con enlaces similares a los generados por el código PHP 
+que me proporcionaste y también verifica el valor del parámetro `sk` en la URL 
+y muestra un mensaje diferente dependiendo de su valor.
+
+Este código JavaScript también utiliza la función `httpBuildQuery()` para generar una cadena de consulta 
+a partir de un objeto con parámetros y luego utiliza esta cadena para crear la URL de cada enlace.
+
+En resumen, estos son ejemplos completos de códigos JavaScript que son equivalentes al código PHP 
+que me proporcionaste para los archivos `buscador.php` y `profile.php`. En estos ejemplos,
+ utilicé la función `httpBuildQuery()` para generar cadenas de consulta en JavaScript de manera similar 
+ a como lo hace la función `http_build_query()` en PHP.
+
+*/
+    
+function httpBuildQuery(params) {
+return Object.entries(params)
+.map(([key, value]) => `${encodeURIComponent(key)}=${encodeURIComponent(value)}`)
+.join('&');
+}
+
+let params = new URLSearchParams(window.location.search);
+
+let data = {
+id: params.get('id')
+};
+
+let section = document.createElement('section');
+
+let links = [
+{ text: 'Biografia', sk: 'wall' },
+{ text: 'Informacion', sk: 'info' },
+{ text: 'Amigos', sk: 'friends' },
+{ text: 'Fotos', sk: 'photo' }
+];
+
+for (let link of links) {
+let article = document.createElement('article');
+let a = document.createElement('a');
+a.href = `profile.html?${httpBuildQuery({ ...data, sk: link.sk })}`;
+a.textContent = link.text;
+article.appendChild(a);
+section.appendChild(article);
+}
+
+document.body.appendChild(section);
+
+let datados = {
+id: params.get('id'),
+sk: params.get('sk')
+};
+
+if (params.get('sk') === 'info') {
+let links = [
+{ text: 'Informacion general', section: 'overview' },
+{ text: 'Trabajo y formacion academica', section: 'education' },
+{ text: 'Lugares en los que has vivido', section: 'living' },
+{ text: 'Informacion basica y de contacto', section: 'contact-info' },
+{ text: 'Familia y relaciones', section: 'relationship' },
+{ text: 'Detalles sobre ti', section: 'bio' },
+{ text: 'Acontecimientos importantes', section: 'year-overviews' }
+];
+
+for (let link of links) {
+let li = document.createElement('li');
+let a = document.createElement('a');
+a.href = `profile.html?${httpBuildQuery({ ...datados, section: link.section })}`;
+a.textContent = link.text;
+li.appendChild(a);
+document.body.appendChild(li);
+}
+}
+
+</script>
+    
+</body>
+</html>

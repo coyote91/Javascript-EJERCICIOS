@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+     <h1>este es el perfil</h1>
+
+<script>
+
+    /*
+    Este código JavaScript utiliza la clase `URLSearchParams` para obtener los valores de los parámetros `id` y `sk` en la URL. 
+    Luego, crea dos objetos llamados `data` y `datados` que contienen los mismos elementos que los arreglos `$data` y `$datados` 
+    en el código PHP.
+
+    En resumen, este código JavaScript crea objetos similares a los arreglos `$data` y `$datados` en el código PHP 
+    que me proporcionaste.
+    */
+
+    
+let params = new URLSearchParams(window.location.search);
+
+let data = {
+                id: params.get('id')
+            };
+
+let datados = {
+                id: params.get('id'),
+                sk: params.get('sk')
+                };
+
+console.log(data);
+console.log(datados);
+
+</script>
+    
+</body>
+</html>
